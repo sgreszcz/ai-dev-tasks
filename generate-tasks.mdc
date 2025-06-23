@@ -28,7 +28,7 @@ To guide an AI assistant in creating a detailed, step-by-step task list in Markd
 
 ## Output Format
 
-The generated task list _must_ follow this structure:
+The generated task list *must* follow this structure:
 
 ```markdown
 ## Relevant Files
@@ -42,8 +42,15 @@ The generated task list _must_ follow this structure:
 
 ### Notes
 
+#### JavaScript/TypeScript Projects
 - Unit tests should typically be placed alongside the code files they are testing (e.g., `MyComponent.tsx` and `MyComponent.test.tsx` in the same directory).
 - Use `npx jest [optional/path/to/test/file]` to run tests. Running without a path executes all tests found by the Jest configuration.
+
+#### Python Projects
+- Unit tests can be placed alongside code files (e.g., `user_service.py` and `test_user_service.py`) or in a separate `tests/` directory structure that mirrors the source code.
+- Use `uv run pytest [optional/path/to/test/file]` to run tests with uv. Running without a path executes all tests found by pytest's test discovery.
+- Test files should be named with a `test_` prefix or `_test.py` suffix for pytest to automatically discover them.
+- When using uv, ensure the project is properly initialized with `uv init` and dependencies are managed in `pyproject.toml`.
 
 ## Tasks
 
